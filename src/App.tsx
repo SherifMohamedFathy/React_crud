@@ -12,7 +12,8 @@ import { IProduct } from "./interfaces";
 import { productValidation } from "./validation";
 import CircleColor from "./components/CircleColor";
 import Select from "./components/Ui/Select";
-import { ProductNameTypes } from "./types";
+import { ProductNameTypes } from "./types/index";
+
 import toast, { Toaster } from "react-hot-toast";
 
 function App() {
@@ -236,10 +237,7 @@ function App() {
           {renderProductEditWithErrorMsg("description", "Product description", "description")}
           {renderProductEditWithErrorMsg("imageURL", "Product Image URL", "imageURL")}
           {renderProductEditWithErrorMsg("price", "Product Price", "price")}
-          {/* <Select
-            selected={productToEdit.category}
-            setSelected={(value) => setProductToEdit({ ...productToEdit, category: value })}
-          /> */}
+
           <Select
             selected={productToEdit.category}
             setSelected={(value) => {
